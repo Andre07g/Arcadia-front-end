@@ -114,7 +114,6 @@ header {
     gap: 10px;
     max-height: 55vh;
     overflow-y: auto;
-    /* Barra de scroll que se vea mejor (esto requeriría webkit-scrollbar, pero lo omitimos por compatibilidad pura) */
 }
 
 .juego-listado {

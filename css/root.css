@@ -1,0 +1,13 @@
+:root {
+    /* 🎨 Paleta principal Friv clásico */
+    --color-morado-principal: #6A0DAD;   /* Fondo clásico */
+    --color-morado-brillante: #8A2BE2;   /* Detalles o resaltados */
+    --color-morado-oscuro: #4B0082;      /* Sombras o bordes */
+    --color-amarillo-logo: #FFD700;      /* Letras del logo Friv */
+    --color-amarillo-claro: #FFE766;     /* Brillos o hover */
+    --color-gris-suave: #F2F2F2;         /* Fondo neutro */
+    --color-blanco: #FFFFFF;             /* Texto o fondos claros */
+    --color-negro: #1A1A1A;              /* Texto oscuro */
+    --color-rosa-acento: #FF4DFF;        /* Detalle secundario divertido */
+    --color-verde-lima: #ADFF2F;         /* Toques energéticos */
+}

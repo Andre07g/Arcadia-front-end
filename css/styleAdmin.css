@@ -1,0 +1,259 @@
+@import url("./root.css");
+
+body {
+    margin: 0;
+    padding: 0;
+    /* Fondo principal: Morado Oscuro para un contraste intenso */
+    background-color: var(--color-morado-oscuro);
+    color: var(--color-blanco); /* Color de texto por defecto */
+}
+
+header {
+    padding-left: 5%;
+}
+
+#barrita {
+    width: 100%;
+    /* Borde negro */
+    border: 2px solid var(--color-negro);
+    /* Fondo de la barrita con el Morado Principal */
+    background-color: var(--color-morado-principal); 
+    /* Altura para que se vea */
+    height: 10px; 
+}
+
+.admin-cuerpo-principal {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-self: center;
+    justify-self: center;
+    gap: 3%;
+    max-height: min-content;
+    margin: 20px auto; /* Centrar el contenedor principal y darle margen */
+}
+
+/* 🎮 PANEL IZQUIERDO */
+.admin-lista-juegos {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 2%;
+    /* Fondo del panel: Morado Brillante */
+    background-color: var(--color-morado-brillante);
+    /* Borde para destacar */
+    border: 5px solid var(--color-negro);
+    /* Sombra para efecto 3D (opcional, pero queda bien) */
+    box-shadow: 8px 8px 0px var(--color-morado-principal); 
+    font-family: 'Press Start 2P', monospace;
+    gap: 12px;
+}
+
+/* 🔍 BARRA DE BÚSQUEDA */
+#barra-busqueda {
+    display: flex;
+    gap: 8px;
+}
+
+.search-input {
+    flex: 1;
+    /* Fondo del input: Blanco */
+    background-color: var(--color-blanco);
+    /* Borde del input: Negro */
+    border: 3px solid var(--color-negro);
+    padding: 10px;
+    font-size: 12px;
+    font-family: inherit;
+    color: var(--color-negro); /* Texto del input negro */
+}
+
+.search-button {
+    /* Color principal del botón: Verde Lima */
+    background-color: var(--color-verde-lima);
+    /* Borde del botón: Negro */
+    border: 3px solid var(--color-negro);
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.1s ease;
+    color: var(--color-negro);
+    font-weight: 700;
+}
+
+.search-button:hover {
+    /* Hover más oscuro o más brillante: Amarillo Logo */
+    background-color: var(--color-amarillo-logo);
+}
+
+/* ➕ BOTÓN CREAR JUEGO */
+.crear-juego {
+    /* Color principal: Verde Lima */
+    background-color: var(--color-verde-lima);
+    /* Borde: Negro */
+    border: 3px solid var(--color-negro);
+    padding: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease;
+    color: var(--color-negro);
+    font-weight: 700;
+}
+
+.crear-juego:hover {
+    /* Hover más oscuro o más brillante: Amarillo Logo */
+    background-color: var(--color-amarillo-logo);
+}
+
+/* 📜 LISTA DE JUEGOS */
+.lista-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 55vh;
+    overflow-y: auto;
+    /* Barra de scroll que se vea mejor (esto requeriría webkit-scrollbar, pero lo omitimos por compatibilidad pura) */
+}
+
+.juego-listado {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    /* Fondo de item: Gris Suave */
+    background-color: var(--color-gris-suave);
+    align-items: center;
+    padding: 0;
+    padding-left: 0px;
+    font-size: 14px;
+    font-weight: 900;
+    /* Borde sutil */
+    border: 2px solid var(--color-morado-principal); 
+    color: var(--color-negro);
+}
+
+.juego-listado img {
+    width: 70px;
+    height: 70px;
+    object-fit: fill;
+    padding: 0;
+    /* Borde a la imagen */
+    border-right: 2px solid var(--color-morado-principal); 
+}
+
+.juego-listado:hover {
+    /* Hover: Amarillo Claro */
+    background-color: var(--color-amarillo-claro);
+    cursor: pointer;
+}
+
+/* 🎮 PANEL DERECHO */
+.admin-cuerpo-juego {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    /* Fondo del panel: Morado Principal */
+    background-color: var(--color-morado-principal);
+    padding: 2%;
+    justify-content: space-between;
+    /* Borde para destacar */
+    border: 5px solid var(--color-negro);
+    /* Sombra para efecto 3D */
+    box-shadow: 8px 8px 0px var(--color-morado-oscuro); 
+}
+
+/* 🧱 INFO DEL JUEGO */
+.info-juego {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    padding-top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 12px;
+    font-family: 'Press Start 2P', monospace;
+    color: var(--color-blanco);
+}
+
+.info-juego label {
+    font-size: 12px;
+    /* Color de acento para las etiquetas */
+    color: var(--color-amarillo-logo); 
+}
+
+.info-juego input,
+.info-juego textarea {
+    /* Fondo del input: Blanco */
+    background-color: var(--color-blanco);
+    /* Borde del input: Negro */
+    border: 3px solid var(--color-negro);
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    resize: none;
+    width: 80%;
+    color: var(--color-negro);
+}
+
+.info-juego textarea {
+    height: 70px;
+}
+
+.info-juego .fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.info-juego button {
+    /* Botón de acción principal: Verde Lima */
+    background-color: var(--color-verde-lima);
+    /* Borde: Negro */
+    border: 3px solid var(--color-negro);
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.1s ease;
+    color: var(--color-negro);
+    font-weight: 700;
+}
+
+.info-juego button:hover {
+    /* Hover: Amarillo Logo */
+    background-color: var(--color-amarillo-logo);
+}
+
+#imagen-juego img {
+    max-width: 100%;
+    height: 70vh;
+    border: 5px solid var(--color-amarillo-logo); /* Borde amarillo para el marco de la imagen */
+}
+
+.info-juego-form {
+    align-self: center !important;
+    justify-self: center !important;
+    width: 80%;
+}
+
+.botones-juego {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.borrar-juego {
+    /* Botón de borrado: Rosa Acento */
+    background-color: var(--color-rosa-acento) !important;
+    color: var(--color-negro) !important;
+}
+
+.borrar-juego:hover {
+    /* Hover de borrado: Morado Brillante */
+    background-color: var(--color-morado-brillante) !important; 
+    color: var(--color-blanco) !important;
+}

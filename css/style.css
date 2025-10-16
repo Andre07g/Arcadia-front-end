@@ -1,5 +1,3 @@
-/* ESTILOS PARA LA PAGINA DE INICIO */
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
@@ -12,40 +10,83 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
-}
-
-.container {
-  text-align: center;
   position: relative;
 }
 
+/* 🌌 FONDO DE ESTRELLAS ANIMADO */
+.stars, .stars2, .stars3 {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-repeat: repeat;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.stars {
+  background-image: radial-gradient(3px 3px at 20px 30px, #fff, transparent),
+                    radial-gradient(2px 2px at 50px 80px, #ffb3ff, transparent),
+                    radial-gradient(3px 3px at 130px 150px, #fff, transparent),
+                    radial-gradient(2px 2px at 200px 250px, #ff91dc, transparent),
+                    radial-gradient(3px 3px at 350px 400px, #fff, transparent);
+  animation: moveStars 60s linear infinite;
+  opacity: 0.6;
+}
+
+.stars2 {
+  background-image: radial-gradient(4px 4px at 100px 200px, #fff, transparent),
+                    radial-gradient(3px 2px at 300px 400px, #ff91dc, transparent),
+                    radial-gradient(4px 4px at 500px 600px, #fff, transparent),
+                    radial-gradient(3px 3px at 700px 800px, #ffb3ff, transparent);
+  animation: moveStars 120s linear infinite reverse;
+  opacity: 0.4;
+}
+
+.stars3 {
+  background-image: radial-gradient(3px 3px at 150px 100px, #fff, transparent),
+                    radial-gradient(2px 2px at 400px 300px, #ff7ffb, transparent),
+                    radial-gradient(3px 3px at 800px 700px, #fff, transparent);
+  animation: moveStars 180s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes moveStars {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-500px, -1000px); }
+}
+
+/* CONTENEDOR */
+.container {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
 .title {
-  font-size: 22px;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
+  font-size: 72px;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
   text-shadow: 0 0 10px #ff7ffb, 0 0 20px #d962f4;
   animation: flicker 2s infinite;
 }
 
 @keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.4;
-  }
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
 }
 
 .start-btn {
   background-color: #ff91dc;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 10px;
+  padding: 20px 30px;
+  font-size: 20px;
   cursor: pointer;
   font-family: inherit;
   box-shadow: 0 4px 0 #c754b7;
   transition: 0.2s;
+  margin-bottom: 30px;
 }
 
 .start-btn:hover {
@@ -79,4 +120,51 @@ body {
 #percentage {
   font-size: 10px;
   color: #fff;
+}
+
+/* 🎮 GAME BOY PIXELADA */
+.gameboy {
+  position: absolute;
+  right: -60px;
+  bottom: 70px;
+  width: 80px;
+  height: 110px;
+  background: #2a2c74;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #d962f4, 0 0 20px #ff7ffb inset;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pantalla */
+.gameboy::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 55px;
+  height: 45px;
+  background: #ff91dc;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  box-shadow: inset -2px -2px 0 #c754b7;
+}
+
+/* Botones */
+.gameboy::after {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  width: 25px;
+  height: 10px;
+  background: #ff7ffb;
+  border-radius: 20px;
+  transform: translateX(-50%) rotate(-15deg);
+}
+
+/* Animación flotante */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
 }

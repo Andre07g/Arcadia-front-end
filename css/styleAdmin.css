@@ -181,18 +181,18 @@ h2 {
 /* 🧩 Cuerpo derecho (detalle o formulario) */
 .admin-cuerpo-juego {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-color: var(--color-blue-dark);
     border: 3px solid var(--color-white);
     border-radius: 10px;
     box-shadow: var(--neon-border);
-    padding: 20px;
+    padding: 25px;
     width: 60%;
-    align-items: center;
-    justify-content: space-around;
-
+    height: 90vh; /* 🔹 más alto, casi toda la pantalla */
+    overflow-y: auto; /* 🔹 permite desplazarse si hay muchos productos */
 }
-
 #imagen-juego {
     width: 40%;
     display: flex;
@@ -227,22 +227,18 @@ h2 {
 }
 
 .info-juego {
+    width: 100%;
+    max-width: 700px; /* antes 480px */
+    background-color: var(--color-gray-dark);
+    padding: 30px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-gray-dark);
-    border: 3px solid var(--color-white);
-    border-radius: 10px;
-    box-shadow: var(--neon-border);
-    padding: 25px;
-    width: 100%;
-    max-width: 480px;
-    color: var(--color-white);
-    font-family: var(--font-arcade);
+    align-items: stretch;
+    justify-content: flex-start;
     gap: 15px;
-    animation: fadeIn 0.4s ease-in-out;
-    
+    border: 3px solid var(--color-white);
+    box-shadow: var(--neon-border);
 }
 
 /* 🏷️ Etiquetas */
@@ -287,7 +283,7 @@ h2 {
     gap: 15px;
 }
 
-.botones-juego button {
+.botones-juego button, .borrar-juego {
     flex: 1;
     padding: 10px 15px;
     font-size: var(--font-size-sm);
@@ -369,4 +365,16 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+#lista-ventas{width: 90% !important;}
+#factura{box-sizing: content-box;display: flex;}
+#detalle-venta{
+height: 80vh;
+}
+
+#productos-container {
+    max-height: 300px !important; /* antes 150px */
+    overflow-y: auto;
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Ventas</title>
+  <link rel="stylesheet" href="../css/styleAdmin.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Arcadia - Ventas</h1>
+  </header>
+
+  <main class="admin-cuerpo-principal">
+    <!-- 📅 Panel izquierdo: lista de ventas -->
+    <div class="admin-lista-juegos">
+      <div id="barra-busqueda">
+        <input type="text" id="sale-search" class="search-input" placeholder="Buscar por cliente o fecha (YYYY-MM-DD)...">
+        <button class="search-button">Buscar</button>
+      </div>
+      <button class="crear-juego" id="crear-venta">Crear Venta</button>
+      <hr id="barrita">
+      <h2>Ventas</h2>
+      <div class="lista-cuerpo" id="lista-ventas"></div>
+    </div>
+
+    <!-- 🧾 Panel derecho: detalle o formulario -->
+    <div class="admin-cuerpo-juego" id="detalle-venta"></div>
+  </main>
+
+  <script src="../scritps/script_sales.js"></script>
+</body>
+
+</html>

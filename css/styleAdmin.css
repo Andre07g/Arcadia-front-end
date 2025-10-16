@@ -1,258 +1,184 @@
-@import url("./root.css");
+@import url('root.css');
 
+/* 🔮 Estructura general */
 body {
-    margin: 0;
-    padding: 0;
-    /* Fondo principal: Morado Oscuro para un contraste intenso */
-    background-color: var(--color-morado-oscuro);
-    color: var(--color-blanco); /* Color de texto por defecto */
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-arcade);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    padding-left: 5%;
+  background-color: var(--color-blue-dark);
+  box-shadow: var(--neon-border);
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px solid var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-#barrita {
-    width: 100%;
-    /* Borde negro */
-    border: 2px solid var(--color-negro);
-    /* Fondo de la barrita con el Morado Principal */
-    background-color: var(--color-morado-principal); 
-    /* Altura para que se vea */
-    height: 10px; 
+header h1 {
+  font-size: var(--font-size-lg);
+  letter-spacing: 3px;
+  margin: 0;
+  text-shadow: var(--neon-glow-pink);
+  animation: flicker 2s infinite;
 }
 
+/* 🧠 Cuerpo principal */
 .admin-cuerpo-principal {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    align-self: center;
-    justify-self: center;
-    gap: 3%;
-    max-height: min-content;
-    margin: 20px auto; /* Centrar el contenedor principal y darle margen */
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
-/* 🎮 PANEL IZQUIERDO */
+/* 📋 Panel lateral (lista de juegos) */
 .admin-lista-juegos {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding: 2%;
-    /* Fondo del panel: Morado Brillante */
-    background-color: var(--color-morado-brillante);
-    /* Borde para destacar */
-    border: 5px solid var(--color-negro);
-    /* Sombra para efecto 3D (opcional, pero queda bien) */
-    box-shadow: 8px 8px 0px var(--color-morado-principal); 
-    font-family: 'Press Start 2P', monospace;
-    gap: 12px;
+  flex: 1;
+  background-color: var(--color-blue-dark);
+  border: 3px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--neon-border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-/* 🔍 BARRA DE BÚSQUEDA */
 #barra-busqueda {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .search-input {
-    flex: 1;
-    /* Fondo del input: Blanco */
-    background-color: var(--color-blanco);
-    /* Borde del input: Negro */
-    border: 3px solid var(--color-negro);
-    padding: 10px;
-    font-size: 12px;
-    font-family: inherit;
-    color: var(--color-negro); /* Texto del input negro */
+  flex: 1;
+  background-color: var(--color-gray-dark);
+  border: 2px solid var(--color-white);
+  border-radius: 5px;
+  color: var(--color-white);
+  padding: 8px;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-arcade);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--color-pink-light);
 }
 
 .search-button {
-    /* Color principal del botón: Verde Lima */
-    background-color: var(--color-verde-lima);
-    /* Borde del botón: Negro */
-    border: 3px solid var(--color-negro);
-    padding: 10px;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: background-color 0.1s ease;
-    color: var(--color-negro);
-    font-weight: 700;
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: var(--color-pink);
+  border: none;
+  border-radius: 5px;
+  color: var(--color-white);
+  font-family: var(--font-arcade);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 3px 0 var(--color-pink-deep);
 }
 
 .search-button:hover {
-    /* Hover más oscuro o más brillante: Amarillo Logo */
-    background-color: var(--color-amarillo-logo);
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--color-pink-deep);
 }
 
-/* ➕ BOTÓN CREAR JUEGO */
 .crear-juego {
-    /* Color principal: Verde Lima */
-    background-color: var(--color-verde-lima);
-    /* Borde: Negro */
-    border: 3px solid var(--color-negro);
-    padding: 12px;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: inherit;
-    text-transform: uppercase;
-    transition: background-color 0.1s ease;
-    color: var(--color-negro);
-    font-weight: 700;
+  align-self: flex-end;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-arcade);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 3px 0 var(--color-pink-deep);
 }
 
 .crear-juego:hover {
-    /* Hover más oscuro o más brillante: Amarillo Logo */
-    background-color: var(--color-amarillo-logo);
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--color-pink-deep);
 }
 
-/* 📜 LISTA DE JUEGOS */
+#barrita {
+  border: none;
+  border-top: 2px solid var(--color-white);
+  margin: 20px 0;
+  opacity: 0.5;
+}
+
+h2 {
+  font-size: var(--font-size-md);
+  color: var(--color-pink-light);
+  text-shadow: var(--neon-glow-pink);
+  margin-bottom: 10px;
+}
+
+/* 🎮 Lista de juegos */
 .lista-cuerpo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 55vh;
-    overflow-y: auto;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 5px;
 }
 
-.juego-listado {
-    width: 100%;
-    display: flex;
-    gap: 10px;
-    /* Fondo de item: Gris Suave */
-    background-color: var(--color-gris-suave);
-    align-items: center;
-    padding: 0;
-    padding-left: 0px;
-    font-size: 14px;
-    font-weight: 900;
-    /* Borde sutil */
-    border: 2px solid var(--color-morado-principal); 
-    color: var(--color-negro);
+.lista-cuerpo::-webkit-scrollbar {
+  width: 8px;
 }
 
-.juego-listado img {
-    width: 70px;
-    height: 70px;
-    object-fit: fill;
-    padding: 0;
-    /* Borde a la imagen */
-    border-right: 2px solid var(--color-morado-principal); 
+.lista-cuerpo::-webkit-scrollbar-thumb {
+  background: var(--color-purple);
+  border-radius: 10px;
 }
 
-.juego-listado:hover {
-    /* Hover: Amarillo Claro */
-    background-color: var(--color-amarillo-claro);
-    cursor: pointer;
+/* 💾 Cada tarjeta de juego */
+.juego-item {
+  background-color: var(--color-gray-dark);
+  border: 2px solid var(--color-white);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
+  transition: var(--transition-fast);
+  box-shadow: 0 0 5px #ff91dc;
 }
 
-/* 🎮 PANEL DERECHO */
+.juego-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--neon-glow-purple);
+}
+
+/* 🧩 Cuerpo derecho (detalle o formulario) */
 .admin-cuerpo-juego {
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    /* Fondo del panel: Morado Principal */
-    background-color: var(--color-morado-principal);
-    padding: 2%;
-    justify-content: space-between;
-    /* Borde para destacar */
-    border: 5px solid var(--color-negro);
-    /* Sombra para efecto 3D */
-    box-shadow: 8px 8px 0px var(--color-morado-oscuro); 
+  flex: 2;
+  background-color: var(--color-blue-dark);
+  border: 3px solid var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--neon-border);
+  padding: 20px;
 }
 
-/* 🧱 INFO DEL JUEGO */
-.info-juego {
-    display: flex;
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .admin-cuerpo-principal {
     flex-direction: column;
-    padding: 5%;
-    padding-top: 0;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    gap: 12px;
-    font-family: 'Press Start 2P', monospace;
-    color: var(--color-blanco);
-}
+  }
 
-.info-juego label {
-    font-size: 12px;
-    /* Color de acento para las etiquetas */
-    color: var(--color-amarillo-logo); 
-}
-
-.info-juego input,
-.info-juego textarea {
-    /* Fondo del input: Blanco */
-    background-color: var(--color-blanco);
-    /* Borde del input: Negro */
-    border: 3px solid var(--color-negro);
-    padding: 10px;
-    font-size: 14px;
-    font-family: inherit;
-    outline: none;
-    resize: none;
-    width: 80%;
-    color: var(--color-negro);
-}
-
-.info-juego textarea {
-    height: 70px;
-}
-
-.info-juego .fila {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.info-juego button {
-    /* Botón de acción principal: Verde Lima */
-    background-color: var(--color-verde-lima);
-    /* Borde: Negro */
-    border: 3px solid var(--color-negro);
-    padding: 12px;
-    font-size: 14px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: background-color 0.1s ease;
-    color: var(--color-negro);
-    font-weight: 700;
-}
-
-.info-juego button:hover {
-    /* Hover: Amarillo Logo */
-    background-color: var(--color-amarillo-logo);
-}
-
-#imagen-juego img {
-    max-width: 100%;
-    height: 70vh;
-    border: 5px solid var(--color-amarillo-logo); /* Borde amarillo para el marco de la imagen */
-}
-
-.info-juego-form {
-    align-self: center !important;
-    justify-self: center !important;
-    width: 80%;
-}
-
-.botones-juego {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-}
-
-.borrar-juego {
-    /* Botón de borrado: Rosa Acento */
-    background-color: var(--color-rosa-acento) !important;
-    color: var(--color-negro) !important;
-}
-
-.borrar-juego:hover {
-    /* Hover de borrado: Morado Brillante */
-    background-color: var(--color-morado-brillante) !important; 
-    color: var(--color-blanco) !important;
+  .admin-lista-juegos, .admin-cuerpo-juego {
+    width: 100%;
+  }
 }

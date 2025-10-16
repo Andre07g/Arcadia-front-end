@@ -1,13 +1,92 @@
+/* 🎮 Arcadia Store - Variables globales de estilo */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
-    /* 🎨 Paleta principal Friv clásico */
-    --color-morado-principal: #6A0DAD;   /* Fondo clásico */
-    --color-morado-brillante: #8A2BE2;   /* Detalles o resaltados */
-    --color-morado-oscuro: #4B0082;      /* Sombras o bordes */
-    --color-amarillo-logo: #FFD700;      /* Letras del logo Friv */
-    --color-amarillo-claro: #FFE766;     /* Brillos o hover */
-    --color-gris-suave: #F2F2F2;         /* Fondo neutro */
-    --color-blanco: #FFFFFF;             /* Texto o fondos claros */
-    --color-negro: #1A1A1A;              /* Texto oscuro */
-    --color-rosa-acento: #FF4DFF;        /* Detalle secundario divertido */
-    --color-verde-lima: #ADFF2F;         /* Toques energéticos */
+  /* 🌈 Colores base */
+  --color-bg: #1a1625;
+  --color-white: #ffffff;
+  --color-pink: #ff91dc;
+  --color-pink-light: #ffb3ff;
+  --color-pink-deep: #c754b7;
+  --color-purple: #d962f4;
+  --color-blue-dark: #2a2c74;
+  --color-gray-dark: #3a2e4f;
+
+  /* 💫 Efectos neón */
+  --neon-glow-pink: 0 0 10px #ff7ffb, 0 0 20px #d962f4;
+  --neon-glow-purple: 0 0 8px #d962f4, 0 0 16px #ff91dc;
+  --neon-border: 0 0 10px #d962f4, 0 0 20px #ff7ffb inset;
+
+  /* 🔤 Tipografía */
+  --font-arcade: 'Press Start 2P', cursive;
+
+  /* 📏 Tamaños base */
+  --font-size-sm: 10px;
+  --font-size-md: 14px;
+  --font-size-lg: 22px;
+
+  /* ⏱️ Animaciones base */
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* 🌌 Fondo base */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-arcade);
+  margin: 0;
+  padding: 0;
+}
+
+/* ✨ Clases reutilizables */
+.neon-text {
+  text-shadow: var(--neon-glow-pink);
+}
+
+.btn-neon {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  font-family: var(--font-arcade);
+  box-shadow: 0 4px 0 var(--color-pink-deep);
+  transition: var(--transition-fast);
+}
+
+.btn-neon:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-pink-deep);
+}
+
+.card-neon {
+  background-color: var(--color-blue-dark);
+  border: 3px solid var(--color-white);
+  border-radius: 8px;
+  box-shadow: var(--neon-border);
+  transition: var(--transition-slow);
+}
+
+.card-neon:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* ⚡ Utilidad para texto pequeño */
+.text-small {
+  font-size: var(--font-size-sm);
+}
+
+/* ✨ Animación flicker retro */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+
+/* ✨ Aplicar flicker */
+.text-flicker {
+  animation: flicker 2s infinite;
 }

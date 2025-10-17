@@ -35,7 +35,7 @@ startBtn.addEventListener('click', () => {
           () => {
             document.querySelector('.container').classList.add('fade-out');
             setTimeout(() => {
-              window.location.href = '../pages/select.html';
+              window.location.href = './pages/select.html';
             }, 800);
           },
           { once: true }

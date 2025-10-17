@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let ventasFiltradas = [];
   let juegos = [];
 
-  // 🟢 Cargar datos iniciales
+  //  Cargar datos iniciales
   async function cargarVentas() {
     try {
       const res = await fetch(endpointSales);
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // 🎨 Mostrar lista de ventas
+  //  Mostrar lista de ventas
   function renderizarVentas() {
     listaVentas.innerHTML = "";
     if (ventasFiltradas.length === 0) {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  // 🔍 Filtrar por cliente o fecha
+  //  Filtrar por cliente o fecha
   function filtrarVentas() {
     const term = inputBusqueda.value.trim().toLowerCase();
     if (term === "") {
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (e.key === "Enter") filtrarVentas();
   });
 
-  // 📋 Mostrar detalle de una venta
+  //  Mostrar detalle de una venta
   function mostrarDetalle(index) {
     const venta = ventasFiltradas[index];
     const fecha = new Date(venta.date).toLocaleString();
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       .addEventListener("click", () => eliminarVenta(venta._id));
   }
 
-  // 🗑️ Eliminar venta
+  //  Eliminar venta
   async function eliminarVenta(id) {
     if (!confirm("¿Seguro que deseas eliminar esta venta?")) return;
     try {
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // 🆕 Crear nueva venta
+  // Crear nueva venta
   botonCrearVenta.addEventListener("click", async () => {
     await cargarJuegos();
 
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
           if (!res.ok) throw new Error("Error al crear la venta");
 
-          // 🧮 Restar stock a los juegos vendidos
+          //  Restar stock a los juegos vendidos
           for (const p of productos) {
             const juego = juegos.find(j => j.title === p.nombre);
             const nuevoStock = juego.stock - p.cantidad;
@@ -208,6 +208,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
   });
 
-  // 🚀 Inicialización
+  //  Inicialización
   cargarVentas();
 });

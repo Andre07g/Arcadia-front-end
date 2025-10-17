@@ -1,6 +1,6 @@
 @import url('root.css');
 
-/* 🔮 Estructura general */
+/*  Estructura general */
 body {
     background-color: var(--color-bg);
     color: var(--color-white);
@@ -29,7 +29,7 @@ header h1 {
     animation: flicker 2s infinite;
 }
 
-/* 🧠 Cuerpo principal */
+/*  Cuerpo principal */
 .admin-cuerpo-principal {
     display: flex;
     flex: 1;
@@ -40,7 +40,7 @@ header h1 {
     max-height: 95vh;
 }
 
-/* 📋 Panel lateral (lista de juegos) */
+/*  Panel lateral (lista de juegos) */
 .admin-lista-juegos {
     flex: 1;
     background-color: var(--color-blue-dark);
@@ -166,7 +166,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* 🎮 Lista de juegos */
+/*  Lista de juegos */
 .lista-cuerpo {
     flex: 1;
     overflow-y: auto;
@@ -176,7 +176,7 @@ h2 {
     padding-right: 5px;
     width: 90%;
     justify-content: start;
-    
+
 
 }
 
@@ -189,7 +189,7 @@ h2 {
     border-radius: 10px;
 }
 
-/* 💾 Cada tarjeta de juego */
+/*  Cada tarjeta de juego */
 .juego-item {
     background-color: var(--color-gray-dark);
     border: 2px solid var(--color-white);
@@ -205,7 +205,7 @@ h2 {
     box-shadow: var(--neon-glow-purple);
 }
 
-/* 🧩 Cuerpo derecho (detalle o formulario) */
+/*  Cuerpo derecho (detalle o formulario) */
 .admin-cuerpo-juego {
     display: flex;
     flex-direction: column;
@@ -245,7 +245,7 @@ h2 {
 
 .info-juego input{width: 100%;}
 
-/* 📱 Responsive */
+/*  Responsive */
 @media (max-width: 900px) {
     .admin-cuerpo-principal {
         flex-direction: column;
@@ -272,7 +272,7 @@ h2 {
     box-shadow: var(--neon-border);
 }
 
-/* 🏷️ Etiquetas */
+/* Etiquetas */
 .info-juego label {
     color: var(--color-pink-light);
     text-shadow: var(--neon-glow-pink);
@@ -280,7 +280,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* ✏️ Campos de texto */
+/*  Campos de texto */
 .info-juego input,
 .info-juego textarea {
     width: 90%;
@@ -305,11 +305,11 @@ h2 {
     resize: vertical;
 }
 
-/* 💾 Botones */
+/*  Botones */
 .botones-juego {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 93%;
     margin-top: 10px;
     gap: 15px;
 }
@@ -348,7 +348,7 @@ h2 {
     box-shadow: 0 1px 0 var(--color-pink-deep);
 }
 
-/* ✨ Animación de entrada */
+/*  Animación de entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -376,14 +376,14 @@ h2 {
     width: 68vh;
 }
 
-/* ✨ Hover */
+/*  Hover */
 .guardar-nuevo-juego:hover {
     transform: translateY(2px);
     box-shadow: 0 1px 0 var(--color-pink-deep);
     text-shadow: var(--neon-glow-pink);
 }
 
-/* 💡 Pequeña animación al aparecer */
+/*  Pequeña animación al aparecer */
 .guardar-nuevo-juego {
     animation: fadeIn 0.4s ease-in-out;
 }

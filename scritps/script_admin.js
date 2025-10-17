@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let juegosFiltrados = [];
 
     // ─────────────────────────────
-    // 🟢 Cargar juegos al iniciar
+    //  Cargar juegos al iniciar
     // ─────────────────────────────
     async function cargarJuegos() {
         try {
@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             renderizarLista();
 
         } catch (error) {
-            console.error("❌ Error:", error);
+            console.error(" Error:", error);
         }
     }
 
     // ─────────────────────────────
-    // 🎨 Renderizar lista de juegos
+    // Renderizar lista de juegos
     // ─────────────────────────────
     function renderizarLista() {
         listaCuerpo.innerHTML = "";
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // ─────────────────────────────
-    // 🔍 Buscar juegos por título
+    // Buscar juegos por título
     // ─────────────────────────────
     function buscarJuegos() {
         const termino = inputBusqueda.value.trim().toLowerCase();
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     // ─────────────────────────────
-    // 🧾 Mostrar detalles del juego
+    // Mostrar detalles del juego
     // ─────────────────────────────
     function mostrarDetalles(index) {
         const juego = juegosFiltrados[index];
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // ─────────────────────────────
-    // 💾 Actualizar (PATCH)
+    // Actualizar (PATCH)
     // ─────────────────────────────
     async function guardarCambios(index) {
         const juego = juegosFiltrados[index];
@@ -143,13 +143,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             renderizarLista();
 
         } catch (error) {
-            console.error("❌ Error al guardar cambios:", error);
-            alert("❌ No se pudo actualizar el juego");
+            console.error("Error al guardar cambios:", error);
+            alert("No se pudo actualizar el juego");
         }
     }
 
     // ─────────────────────────────
-    // 🗑️ Eliminar juego (DELETE)
+    //  Eliminar juego (DELETE)
     // ─────────────────────────────
     async function eliminarJuego(index) {
         const juego = juegosFiltrados[index];
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const response = await fetch(`${endpoint}/${juego._id}`, { method: "DELETE" });
             if (!response.ok) throw new Error("Error al eliminar el juego");
 
-            alert("🗑️ Juego eliminado correctamente");
+            alert(" Juego eliminado correctamente");
 
             // Elimina de ambas listas
             juegos = juegos.filter(j => j._id !== juego._id);
@@ -170,8 +170,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             adminJuego.innerHTML = "<p>Selecciona un juego para ver sus detalles</p>";
 
         } catch (error) {
-            console.error("❌ Error al eliminar:", error);
-            alert("❌ No se pudo eliminar el juego");
+            console.error(" Error al eliminar:", error);
+            alert(" No se pudo eliminar el juego");
         }
     }
 
@@ -235,14 +235,14 @@ document.addEventListener("DOMContentLoaded", async () => {
                 cargarJuegos(); // Refresca desde el backend
 
             } catch (error) {
-                console.error("❌ Error al crear el juego:", error);
+                console.error(" Error al crear el juego:", error);
                 alert("No se pudo crear el juego");
             }
         });
     });
 
     // ─────────────────────────────
-    // 🚀 Ejecutar al cargar la página
+    // Ejecutar al cargar la página
     // ─────────────────────────────
     cargarJuegos();
 });

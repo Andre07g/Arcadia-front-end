@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* 🌌 FONDO DE ESTRELLAS ANIMADO MEJORADO */
+/*  FONDO DE ESTRELLAS ANIMADO MEJORADO */
 .stars, .stars2, .stars3 {
   position: absolute;
   top: 0;
@@ -25,7 +25,7 @@ body {
   pointer-events: none;
 }
 
-/* 🌟 Capa 1: estrellas pequeñas y abundantes */
+/*  Capa 1: estrellas pequeñas y abundantes */
 .stars {
   background-image:
     radial-gradient(1px 1px at 10px 10px, #fff, transparent),
@@ -39,7 +39,7 @@ body {
   animation: moveStars 120s linear infinite;
 }
 
-/* ✨ Capa 2: estrellas medianas */
+/*  Capa 2: estrellas medianas */
 .stars2 {
   background-image:
     radial-gradient(2px 2px at 30px 50px, #fff, transparent),
@@ -52,7 +52,7 @@ body {
   animation: moveStars 200s linear infinite reverse;
 }
 
-/* 💫 Capa 3: estrellas grandes y suaves */
+/*  Capa 3: estrellas grandes y suaves */
 .stars3 {
   background-image:
     radial-gradient(3px 3px at 100px 150px, #fff, transparent),
@@ -65,7 +65,7 @@ body {
   animation: moveStars 300s linear infinite;
 }
 
-/* 🌠 Movimiento lento para simular profundidad */
+/*  Movimiento lento para simular profundidad */
 @keyframes moveStars {
   from {
     transform: translateY(0);
@@ -144,7 +144,7 @@ body {
   color: #fff;
 }
 
-/* 🎮 GAME BOY PIXELADA */
+/*  GAME BOY PIXELADA */
 .gameboy {
   position: absolute;
   right: -60px;

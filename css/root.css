@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  /* 🌈 Colores base */
+  /* Colores base */
   --color-bg: #1a1625;
   --color-white: #ffffff;
   --color-pink: #ff91dc;
@@ -14,25 +14,25 @@
   --color-blue-dark: #2a2c74;
   --color-gray-dark: #3a2e4f;
 
-  /* 💫 Efectos neón */
+  /* Efectos neón */
   --neon-glow-pink: 0 0 10px #ff7ffb, 0 0 20px #d962f4;
   --neon-glow-purple: 0 0 8px #d962f4, 0 0 16px #ff91dc;
   --neon-border: 0 0 10px #d962f4, 0 0 20px #ff7ffb inset;
 
-  /* 🔤 Tipografía */
+  /*  Tipografía */
   --font-arcade: 'Press Start 2P', cursive;
 
-  /* 📏 Tamaños base */
+  /*  Tamaños base */
   --font-size-sm: 10px;
   --font-size-md: 14px;
   --font-size-lg: 22px;
 
-  /* ⏱️ Animaciones base */
+  /*  Animaciones base */
   --transition-fast: 0.2s ease;
   --transition-slow: 0.5s ease;
 }
 
-/* 🌌 Fondo base */
+/*  Fondo base */
 body {
   background-color: var(--color-bg);
   color: var(--color-white);
@@ -41,7 +41,7 @@ body {
   padding: 0;
 }
 
-/* ✨ Clases reutilizables */
+/*  Clases reutilizables */
 .neon-text {
   text-shadow: var(--neon-glow-pink);
 }
@@ -80,13 +80,13 @@ body {
   font-size: var(--font-size-sm);
 }
 
-/* ✨ Animación flicker retro */
+/*  Animación flicker retro */
 @keyframes flicker {
   0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
   20%, 24%, 55% { opacity: 0.4; }
 }
 
-/* ✨ Aplicar flicker */
+/*  Aplicar flicker */
 .text-flicker {
   animation: flicker 2s infinite;
 }

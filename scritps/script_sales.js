@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <label>Cliente:</label>
         <input type="text" id="nuevo-cliente" placeholder="Nombre del cliente">
         <label>Selecciona juegos:</label>
-        <div id="productos-container" style="width:100%; max-height:150px; overflow:auto; border:2px solid var(--color-white); padding:10px; border-radius:6px;">
+        <div id="productos-container" style="width:65vh; max-height:150px; overflow:auto; border:2px solid var(--color-white); padding:10px; border-radius:6px;">
           ${juegos
             .map(
               j => `

@@ -52,6 +52,7 @@ header h1 {
     flex-direction: column;
     align-items: center;
     width: 40%;
+
 }
 
 .juego-listado {
@@ -107,6 +108,29 @@ header h1 {
 .search-button:hover {
     transform: translateY(2px);
     box-shadow: 0 1px 0 var(--color-pink-deep);
+}
+
+.arcadia-btn {
+  position:fixed;
+  bottom: 20px;
+  right: 25px;
+  padding: 14px 14px; /* más pequeño */
+  margin: 0;
+  background-color: var(--color-pink);
+  border: none;
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-arcade);
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 var(--color-pink-deep);
+  transition: var(--transition-fast);
+  z-index: 20;
+}
+
+.arcadia-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--color-pink-deep);
 }
 
 .crear-juego {
@@ -191,7 +215,7 @@ h2 {
     box-shadow: var(--neon-border);
     padding: 25px;
     width: 60%;
-    height: 90vh; /* 🔹 más alto, casi toda la pantalla */
+    height: 70vh; /* 🔹 más alto, casi toda la pantalla */
     overflow-y: auto; /* 🔹 permite desplazarse si hay muchos productos */
 }
 #imagen-juego {
@@ -335,7 +359,7 @@ h2 {
     color: var(--color-white);
     border: none;
     border-radius: 6px;
-    padding: 10px 18px;
+    padding: 8px 8px;
     font-size: var(--font-size-sm);
     font-family: var(--font-arcade);
     cursor: pointer;
@@ -343,6 +367,7 @@ h2 {
     box-shadow: 0 3px 0 var(--color-pink-deep);
     text-transform: uppercase;
     letter-spacing: 1px;
+    width: 85vh;
 }
 
 /* ✨ Hover */
@@ -372,10 +397,11 @@ h2 {
 #lista-ventas{width: 90% !important;}
 #factura{box-sizing: content-box;display: flex;}
 #detalle-venta{
-height: 80vh;
+height: 70vh;
 }
 
 #productos-container {
     max-height: 300px !important; /* antes 150px */
     overflow-y: auto;
+    width: 85vh
 }

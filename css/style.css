@@ -13,48 +13,70 @@ body {
   position: relative;
 }
 
-/* 🌌 FONDO DE ESTRELLAS ANIMADO */
+/* 🌌 FONDO DE ESTRELLAS ANIMADO MEJORADO */
 .stars, .stars2, .stars3 {
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background-repeat: repeat;
   top: 0;
   left: 0;
+  width: 300%;
+  height: 300%;
+  background-repeat: repeat;
   z-index: 0;
+  pointer-events: none;
 }
 
+/* 🌟 Capa 1: estrellas pequeñas y abundantes */
 .stars {
-  background-image: radial-gradient(3px 3px at 20px 30px, #fff, transparent),
-                    radial-gradient(2px 2px at 50px 80px, #ffb3ff, transparent),
-                    radial-gradient(3px 3px at 130px 150px, #fff, transparent),
-                    radial-gradient(2px 2px at 200px 250px, #ff91dc, transparent),
-                    radial-gradient(3px 3px at 350px 400px, #fff, transparent);
-  animation: moveStars 60s linear infinite;
-  opacity: 0.6;
+  background-image:
+    radial-gradient(1px 1px at 10px 10px, #fff, transparent),
+    radial-gradient(1px 1px at 40px 80px, #ffb3ff, transparent),
+    radial-gradient(1px 1px at 70px 120px, #ff91dc, transparent),
+    radial-gradient(1px 1px at 100px 160px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 200px, #ffb3ff, transparent),
+    radial-gradient(1px 1px at 160px 240px, #ff91dc, transparent);
+  background-size: 200px 200px; /* 🔹 se repite muchas veces */
+  opacity: 0.7;
+  animation: moveStars 120s linear infinite;
 }
 
+/* ✨ Capa 2: estrellas medianas */
 .stars2 {
-  background-image: radial-gradient(4px 4px at 100px 200px, #fff, transparent),
-                    radial-gradient(3px 2px at 300px 400px, #ff91dc, transparent),
-                    radial-gradient(4px 4px at 500px 600px, #fff, transparent),
-                    radial-gradient(3px 3px at 700px 800px, #ffb3ff, transparent);
-  animation: moveStars 120s linear infinite reverse;
-  opacity: 0.4;
+  background-image:
+    radial-gradient(2px 2px at 30px 50px, #fff, transparent),
+    radial-gradient(2px 2px at 80px 100px, #ffb3ff, transparent),
+    radial-gradient(2px 2px at 150px 180px, #ff91dc, transparent),
+    radial-gradient(2px 2px at 200px 40px, #fff, transparent),
+    radial-gradient(2px 2px at 250px 250px, #ffb3ff, transparent);
+  background-size: 300px 300px;
+  opacity: 0.5;
+  animation: moveStars 200s linear infinite reverse;
 }
 
+/* 💫 Capa 3: estrellas grandes y suaves */
 .stars3 {
-  background-image: radial-gradient(3px 3px at 150px 100px, #fff, transparent),
-                    radial-gradient(2px 2px at 400px 300px, #ff7ffb, transparent),
-                    radial-gradient(3px 3px at 800px 700px, #fff, transparent);
-  animation: moveStars 180s linear infinite;
-  opacity: 0.3;
+  background-image:
+    radial-gradient(3px 3px at 100px 150px, #fff, transparent),
+    radial-gradient(4px 4px at 200px 250px, #ffb3ff, transparent),
+    radial-gradient(5px 5px at 300px 100px, #ff91dc, transparent),
+    radial-gradient(3px 3px at 400px 300px, #fff, transparent),
+    radial-gradient(4px 4px at 500px 200px, #ffb3ff, transparent);
+  background-size: 400px 400px;
+  opacity: 0.4;
+  animation: moveStars 300s linear infinite;
 }
 
+/* 🌠 Movimiento lento para simular profundidad */
 @keyframes moveStars {
-  from { transform: translate(0, 0); }
-  to { transform: translate(-500px, -1000px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-500px);
+  }
 }
+
+
+
 
 /* CONTENEDOR */
 .container {
@@ -162,6 +184,111 @@ body {
   border-radius: 20px;
   transform: translateX(-50%) rotate(-15deg);
 }
+
+/* --- Animación de aparición/desaparición --- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+/* --- Estilo retro–neón para el texto --- */
+.neon-text {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 25px #00ffff;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+
+/* === Botones estilo Arcadia === */
+.arcadia-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 15px;
+  background-color: var(--color-pink);
+  border: none;
+  color: var(--color-white);
+  font-size: 14px;
+  font-family: var(--font-arcade);
+  text-decoration: none;
+  border: 2px solid #00ffff;
+  border-radius: 5px;
+  box-shadow:
+    0 0 10px #00ffff,
+    inset 0 0 10px #00ffff;
+  transition: all 0.25s ease-in-out;
+  text-transform: uppercase;
+}
+
+.arcadia-btn:hover {
+  color: #ff00ff;
+  border-color: #ff00ff;
+  box-shadow:
+    0 0 15px #ff00ff,
+    inset 0 0 15px #ff00ff;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* === Contenedor de botones === */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Texto “Press any key...” --- */
+.continue-text {
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.8;
+  margin-top: 10px;
+  text-shadow: 0 0 8px #ff00ff;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
 
 /* Animación flotante */
 @keyframes float {

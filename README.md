@@ -116,6 +116,15 @@ El resultado es una estética inspirada en los *salones arcade de los 80s*, comb
 ---
 
 
+## 📽️ Ejecución del proyecto
+
+Link del video explicativo y ejecución del frontend:
+
+ https://drive.google.com/file/d/1YQV2Ieyetddm8OzkZU65WlCZ6d5vzGVC/view?usp=sharing 
+
+---
+
+
 ## 💖 Créditos
 Desarrollado con 💡 pasión por: 
 
